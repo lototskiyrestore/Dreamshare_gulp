@@ -1,0 +1,692 @@
+@import "base/reset";
+@import "base/fonts";
+@import "base/mixins/mixins";
+@import "base/vars/vars";
+
+
+.wrapper {
+   width: 100%;
+   height: 100%;
+   overflow-x: hidden;
+}
+
+.container {
+   max-width: 1440px;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   font-family: 'Regular';
+   position: relative;
+   margin: 0 auto;
+}
+
+.header {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   color: $color-light;
+   padding: 46px 50px 0px 48px;
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      flex-wrap: wrap;
+      max-width: 901px;
+      margin: 0 auto;
+      @media (max-width: 767.98px) {
+         flex-direction: column;
+      }
+   }
+
+   &__brand {
+      text-transform: uppercase;
+      @include font-prop(20px, 'Bold');
+      padding-top: 2px;
+      order: 1;
+      @media (max-width: 767.98px) {
+         flex-direction: column;
+         order: 2;
+      }
+   }
+
+   &__log {
+      @include font-prop($font-size-xs, 'Regular');
+      padding: 6px 0px 0px 6px;
+      order: 2;
+
+      @media (max-width: 767.98px) {
+         flex-direction: column;
+         order: 1;
+         margin-bottom: 105px;
+      }
+   }
+   &__button {
+      color: $color-light;
+      &_login {
+         padding-right: 16px;
+      }
+
+      &_signup {
+         border: 2px solid $color-light;
+         padding: 8px 15px 7px 16px;
+         border-radius: 40px;
+      }
+   }
+}
+
+.main {
+   flex: 1 1 auto;
+}
+
+.dreamshare {
+   background: url(../images/main.png) no-repeat;
+   background-size: cover;
+   background-position: center;
+   color: $color-light;
+   padding: 223px 0px 224px 0px;
+
+   @media (max-width: 575.98px) {
+      padding: 203px 0px 153px 0px;
+   }
+
+   &__body {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (max-width: 575.98px) {
+         margin-top: 27px;
+      }
+   }
+   
+   &__title {
+      @include font-prop(52px, 'Bold');
+      width: 470px;
+      margin-bottom: 29px;
+      line-height: 63.39px;
+      
+      @media (max-width: 575.98px) {
+         font-size: 30px;
+         max-width: 272px;
+         line-height: 40px;
+         margin-bottom: 12px;
+      }
+   }
+
+   &__txt {
+      @include font-prop($font-size-m, 'Light');
+      margin-bottom: 34px;
+      @media (max-width: 767.98px) {
+         font-size: 18px;
+         max-width: 272px;
+         line-height: 24px;
+      }
+   }
+   &__button {
+      font-size: 14px;
+      font-family: 'Bold';
+      color: $color-light;
+      border-radius: 40px;
+      padding: 13px 18.5px 14px 19.5px;
+      background-color: $button-bg;
+   }
+}
+
+.howitworks {
+   max-width: 941px;
+   margin: 89px auto 95px;
+   
+   @media (max-width: 575.98px) {
+      margin: 35px auto 36px;
+   }
+   
+   &__header {
+      text-align: center;
+      @include font-prop($font-size-l, 'Bold');;
+      color: $color-dark;
+      margin-bottom: 39px;
+      @media (max-width: 575.98px) {
+         margin: 35px auto 15px;
+      }
+   }
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 767.98px) {
+         margin: 0px 10px;
+      }
+
+      @media (max-width: 575.98px) {
+         flex-wrap: wrap;
+      }
+   }
+   
+   &__block {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex: 1 1 33%;
+      height: 400px;
+      color: $color-light;
+      padding: 0px 25px 21px 25px;
+      border-radius: 4px;
+
+      @media (max-width: 575.98px) {
+         flex: 1 1 100%;
+         height: 240px;
+      }
+
+      &:not(:last-child) {
+         margin-right: 20px;
+
+         @media (max-width: 575.98px) {
+            margin-right: 0;
+            margin-bottom: 10px;
+         }
+      }
+
+      &_one {
+         background: url(../images/work/work1.png) no-repeat;
+         background-size: cover;
+      }
+
+      &_two {
+         background: url(../images/work/work2.png) no-repeat;
+         background-size: cover;
+      }
+
+      &_three {
+         background: url(../images/work/work3.png) no-repeat;
+         background-size: cover;
+      }
+   }
+
+   &__button {
+      text-transform: uppercase;
+      color: $color-light;
+      background-color: $button-bg;
+      padding: 5px 14px 3px;
+      border-radius: 40px;
+      margin-bottom: 23px;
+   }
+
+   &__title {
+      @include font-prop($font-size-m, 'Bold');
+      margin-bottom: 25px;
+   }
+
+   &__txt {
+      @include font-prop($font-size-xs, 'Light');
+   }
+}
+
+.meetings {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   max-width: 941px;
+   margin: 0 auto 95px;
+
+   @media (max-width: 575.98px) {
+      margin: 0 auto 35px;
+   }
+
+   &__header {
+      text-align: center;
+      @include font-prop($font-size-l, 'Bold');
+      color: $color-dark;
+      margin-bottom: 35px;
+      @media (max-width: 575.98px) {
+         font-size: $font-size-s;
+         width: 260px;
+         margin: 0 auto 14px auto;
+      }
+   }
+
+   &__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+   &__block {
+      flex: 1 1 25%;
+      text-align: center;
+
+      &:not(:last-child) {
+         padding-right: 19px;
+
+         @media (max-width: 767.98px) {
+            padding-right: 42px;
+            padding-left: 42px;
+         }
+      }
+
+      &_one {
+         order: 1;
+
+         @media (max-width: 767.98px) {
+            flex: 1 1 50%;
+         }
+
+         @media (max-width: 575.98px) {
+            flex: 1 1 100%;
+         }
+      }
+
+      &_two {
+         order: 2;
+
+         @media (max-width: 767.98px) {
+            flex: 1 1 50%;
+            order: 3;
+         }
+
+         @media (max-width: 575.98px) {
+            flex: 1 1 100%;
+         }
+      }
+
+      &_three {
+         order: 3;
+
+         @media (max-width: 767.98px) {
+            flex: 1 1 50%;
+            order: 2;
+         }
+
+         @media (max-width: 575.98px) {
+            flex: 1 1 100%;
+         }
+      }
+
+      &_four{
+         order: 4;
+
+         @media (max-width: 767.98px) {
+            flex: 1 1 50%;
+            padding-right: 19px;
+         }
+
+         @media (max-width: 575.98px) {
+            flex: 1 1 100%;
+            padding-right: 19px;
+         }
+      }
+   }
+
+   &__img-block {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+         content: "";
+         position: absolute;
+         bottom: 17px;
+         right: 0px;
+         width: 36px;
+         height: 36px;
+         border: 4px solid $color-light;
+         border-radius: 50%;
+         z-index: 1;
+      }
+
+      &_one::before {
+         content: "";
+         background: url(../images/partners/icons/music.svg) no-repeat center;
+         background-size: 16px 16px;
+         background-color: #FF4E50;
+      }
+
+      &_two::before {
+         content: "";
+         background: url(../images/partners/icons/brush.svg) no-repeat center;
+         background-size: 16px 16px;
+         background-color: #19D4CA;
+      }
+
+      &_three::before {
+         content: "";
+         background: url(../images/partners/icons/camera.svg) no-repeat center;
+         background-size: 16px 16px;
+         background-color: #FFA710;
+      }
+
+      &_four::before {
+         content: "";
+         background: url(../images/partners/icons/airplane.svg) no-repeat center;
+         background-size: 21px 21px;
+         background-color: #667DF3;
+      }
+   }
+
+   &__img {
+      border-radius: 50%;
+      margin-bottom: 17px;
+      width: 100%;
+   }
+
+   &__title {
+      @include font-prop($font-size-xs, 'Bold');
+      color: $color-dark;
+      margin-bottom: 12px;
+   }
+
+   &__txt {
+      @include font-prop($font-size-xs, 'Light');
+      color: $color-dark2;
+      margin-bottom: 36px;
+   }
+
+   &__button {
+      border: 2px solid $button-bg;
+      border-radius: 40px;
+      color: $button-bg;
+      font-family: 'Bold';
+      padding: 10px 17px 9px 22px;
+   }
+}
+
+.activities {
+   max-width: 941px;
+   margin: 0 auto 98px;
+
+   @media (max-width: 575.98px) {
+      margin: 0 auto 35px;
+   }
+
+   &__header {
+      text-align: center;
+      @include font-prop($font-size-l, 'Bold');
+      color: $color-dark;
+      margin-bottom: 35px;
+
+      @media (max-width: 575.98px) {
+         font-size: $font-size-s;
+         width: 260px;
+         margin: 0 auto 33px auto;
+      }
+   }
+
+   &__container {
+      display: grid;
+      grid-template: repeat(3, minmax(auto, 310px)) / repeat(3, minmax(auto, 1fr));
+      grid-template-areas: 
+      "one two three"
+      "four five five"
+      "six six seven";
+      gap: 20px;
+
+      @media (max-width: 767.98px) {
+         margin: 0px 10px;
+      }
+
+      @media (max-width: 575.98px) {
+         grid-template: repeat(7, minmax(auto, 120px)) / repeat(1, minmax(auto, 300px));
+         grid-template-areas: 
+         "one"
+         "two"
+         "three"
+         "four"
+         "five"
+         "six"
+         "seven";
+         gap: 10px;
+         justify-content: center;
+      }
+   }
+
+   &__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include font-prop($font-size-s, 'Bold');
+      color: $color-light;
+      border-radius: 4px;
+
+      &_one {
+         grid-area: one;
+         background: url(../images/activities/sport.png) no-repeat;
+         background-position: center;
+      }
+
+      &_two {
+         grid-area: two;
+         background: url(../images/activities/health.png) no-repeat;
+         background-position: center;
+      }
+
+      &_three {
+         display: flex;
+         flex-direction: column;
+         grid-area: three;
+         background: url(../images/activities/extreme.png) no-repeat;
+         background-position: center;
+      }
+
+      &_four {
+         grid-area: four;
+         background: url(../images/activities/games.png) no-repeat;
+         background-position: center;
+      }
+
+      &_five {
+         grid-area: five;
+         background: url(../images/activities/culture1.png) no-repeat;
+         background-position: center;
+      }
+
+      &_six {
+         grid-area: six;
+         background: url(../images/activities/enjoyment.png) no-repeat;
+         background-position: center;
+      }
+
+      &_seven {
+         grid-area: seven;
+         background: url(../images/activities/travel.png) no-repeat;
+         background-position: center;
+      }
+   }
+}
+
+.create {
+   max-width: 941px;
+   margin: 0 auto 97px;
+   
+   @media (max-width: 767.98px) {
+      margin: 0 10px 97px 10px;
+   }
+
+   @media (max-width: 575.98px) {
+      margin: 0 10px 40px 10px;
+   }
+
+   &__header {
+      text-align: center;
+      @include font-prop($font-size-l, 'Bold');
+      color: $color-dark;
+      margin-bottom: 50px;
+
+      @media (max-width: 575.98px) {
+         font-size: $font-size-s;
+         width: 260px;
+         margin: 0 auto 20px auto;
+      }
+   }
+
+   &__txt {
+      @include font-prop(18px, 'Light');
+      color: $color-dark2;
+      margin-bottom: 25px;
+      text-align: center;
+   }
+
+   &__search {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 575.98px) {
+         flex-direction: column;
+         justify-content: stretch;
+         align-items: stretch;
+      }
+   }
+   
+   &__input {
+      outline: 1px solid $color-light2;
+      font-size: $font-size-xs;
+      color: $color-light3;
+      padding: 16px 0px 9px 14px;
+      width: 299px;
+      margin-right: 10px;
+
+      @media (max-width: 575.98px) {
+         align-self: center;
+         justify-self: center;
+         width: 280px;
+         margin-bottom: 10px;
+      }
+   }
+
+   &__button {
+      background-color: $button-bg;
+      border-radius: 40px;
+      color: $color-light;
+      font-family: 'Bold';
+      font-size: $font-size-xs;
+      padding: 10px 17px 9px 22px;
+
+      @media (max-width: 575.98px) {
+         text-align: center;
+         width: 280px;
+         align-self: center;
+      }
+   }
+}
+
+.footer {
+   border-top: 2px solid $button-bg;
+
+   &__container {
+      max-width: 941px;
+      margin: 38px auto 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items:flex-start;
+
+      @media (max-width: 767.98px) {
+         flex: 1 1 50%;
+         order: 3;
+         padding: 0px 39px;
+      }
+
+      @media (max-width: 575.98px) {
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin: 20px auto 22px;
+      }
+   }
+
+   &__brand {
+      flex: 1 1 23%;
+      text-transform: uppercase;
+      color: $button-bg;
+      @include font-prop(16px, 'Regular');
+
+      @media (max-width: 575.98px) {
+         margin-bottom: 15px;
+      }
+   }
+
+   &__company {
+      flex: 1 1 25%;
+      @include font-prop($font-size-xs, 'Bold');
+
+      @media (max-width: 575.98px) {
+         text-align: center;
+      }
+   }
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+
+      @media (max-width: 575.98px) {
+         margin-top: 10px;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-evenly;
+         align-items: center;
+         flex-wrap: wrap;
+      }
+   }
+
+   &__item {
+      line-height: 26px;
+
+      &:not(:last-child) {
+         @media (max-width: 575.98px) {
+            padding-right: 15px;
+         }
+      }
+
+      &:first-child {
+            margin-top: 15px;
+            @media (max-width: 575.98px) {
+               margin-top: 0px;
+            }
+         }
+
+         
+   }
+
+   &__href {
+      @include font-prop($font-size-xs, 'Light');
+      color: $color-light3;
+   }
+
+   &__partners {
+      flex: 1 1 22%;
+      @include font-prop($font-size-xs, 'Bold');
+
+      @media (max-width: 575.98px) {
+         margin-bottom: 15px;
+      }
+   }
+
+   &__block {
+      flex: 1 1 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      @media (max-width: 575.98px) {
+         align-items: center;
+      }
+   }
+
+   &__designed {
+      text-transform: uppercase;
+      @include font-prop(10px, 'Bold');
+      color: #ccc;
+      margin-bottom: 7px;
+   }
+
+   &__logo {
+
+   }
+}
+
